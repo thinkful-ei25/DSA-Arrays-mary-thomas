@@ -143,25 +143,20 @@ function removeLessThan(arr) {
 //    Output: 12
 
 let lcsArray = [ 4, 6, -3, 5, -2, 1 ];
-let lcsArray2 = [-1, 4, 3, -1, -5, -3, 10, 11];
+let lcsArray2 = [-1, 4, 3, -1, -5, -3, 10, 11]; // made up test case
+// function largeContinuousSum(arr) {
+//   let sum = 0;
+//   let contSum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     if (sum > contSum) {
+//       contSum = sum;
+//     }
+//   }
+//   return contSum;
+// }
+
 function largeContinuousSum(arr) {
-  let sum = 0;
-  let contSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    if (sum > contSum) {
-      contSum = sum;
-      // console.log('contSum', contSum);
-    }
-  }
-  return contSum;
-}
-
-// console.log(largeContinuousSum(lcsArray)); // lcsArray = 12
-// console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test case.
-
-let c = [-1, 4, 3, -1, -5, -3, 10, 11];
-function findMax(arr) {
   let maxToHere = 0;
   let maxSoFar = 0;
 
@@ -173,8 +168,9 @@ function findMax(arr) {
   }
   return maxSoFar;
 }
+console.log(largeContinuousSum(lcsArray)); //  12
+console.log(largeContinuousSum(lcsArray2)); // 21
 
-console.log(findMax(c));
 
 
 /* - - - - - - - - - - - - - - - - -*/
