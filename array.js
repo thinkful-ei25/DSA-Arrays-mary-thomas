@@ -1,5 +1,6 @@
 'use strict';
-const memory = require('./memory');
+const Memory = require('./memory');
+const memory = new Memory();
 
 class Array {
   constructor() {
@@ -41,7 +42,7 @@ class Array {
     const value = memory.get(this.ptr + this.length - 1);
     this.length--;
     return value;
-}
+  }
 
   insert(index, value) {
     if (index < 0 || index >= this.length) {
