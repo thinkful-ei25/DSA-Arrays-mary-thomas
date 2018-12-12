@@ -99,3 +99,17 @@ console.log(arr.map(URLify));
 // numbers less than five from the array. Don't use array's built-in .filter 
 // method here; write the algorithm from scratch.
 
+let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function removeLessThan(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] > 5) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(removeLessThan(testArray));
+// result -> [ 6, 7, 8, 9, 10 ]
