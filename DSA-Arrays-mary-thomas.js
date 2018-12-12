@@ -66,4 +66,36 @@ function main() {
   // arr._resize() calls are not intended.
 }
 
-main();
+// main();
+
+
+// URLify a string
+// A common mistake users make when they type in an URL is to put spaces between words 
+// or letters. One solution that developers can use to solve this problem is to replace 
+// any spaces with a '%20'. Write a method that takes in a string and replaces all its 
+// empty spaces with a '%20'. Your algorithm can only make 1 pass through the string. 
+// Examples of input and output for this problem can be:
+//    Input: tauhida parveen
+//    Output: tauhida%20parveen
+//    input: www.thinkful.com /tauh ida parv een
+//    output: www.thinkful.com%20/tauh%20ida%20parv%20een
+
+function URLify(string){
+  // need to use regex /\s/g to replace all spaces with %20 not just the first.
+  return string.replace(/\s/g, '%20');
+}
+// test URLify on each input
+// console.log(URLify('tauhida parveen'));
+// console.log(URLify('www.thinkful.com /tauh ida parv een'));
+
+// put inputs into array and use arr.map(URLify)
+let arr = ['tauhida parveen', 'www.thinkful.com /tauh ida parv een'];
+console.log(arr.map(URLify));
+// result: [ 'tauhida%20parveen','www.thinkful.com%20/tauh%20ida%20parv%20een' ]
+
+
+// Filtering an array
+// Imagine you have an array of numbers. Write an algorithm to remove all 
+// numbers less than five from the array. Don't use array's built-in .filter 
+// method here; write the algorithm from scratch.
+
