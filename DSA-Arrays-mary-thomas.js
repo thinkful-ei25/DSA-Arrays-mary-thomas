@@ -204,3 +204,42 @@ console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test
 // except the one at that index.
 //    Input:[1, 3, 9, 4]
 //    Output:[108, 36, 12, 27]
+
+
+
+
+
+/* - - - - - - - - - - - - - - -*/
+/* - - - - - 2D ARRAY - - - - - */
+/* - - - - - - - - - - - - - - -*/
+
+// Write an algorithm which searches through a 2D array, and whenever it finds a zero 
+// should set the entire row and column to zero.
+//    input:
+//    [[1,0,1,1,0],
+//    [0,1,1,1,0],
+//    [1,1,1,1,1],
+//    [1,0,1,1,1],
+//    [1,1,1,1,1]];
+//    output:
+//    [[0,0,0,0,0],
+//    [0,0,0,0,0],
+//    [0,0,1,1,0],
+//    [0,0,0,0,0],
+//    [0,0,1,1,0]];
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - */
+/* - - - - - STRING ROTATION - - - - - */
+/* - - - - - - - - - - - - - - - - - - */
+
+// Given two strings, str1 and str2, write a program that checks if str2 
+// is a rotation of str1.
+//    Input: amazon, azonma
+//    Output: False
+//    Input: amazon, azonam
+//    Output: true
