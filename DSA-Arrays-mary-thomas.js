@@ -55,6 +55,11 @@ function main() {
   console.log(arr);
 
   // What is the purpose of the _resize() function in your Array class?
+  // To allocate enough capacity for our new input if needed. First copies over the new inputs
+  // to the new location with the new capacity and then executes memory.free(oldPtr); to free
+  // up the memory spots no longer being used for new data.
+
+  // Side note on _resize() naming:
   // It is a naming convention used in javascript for private methods that are just used within
   // the class and are not supposed to be called by users. For example arr.pop(), arr.push() 
   // are available for use but we use the _resize() naming convention to indicate that
