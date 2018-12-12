@@ -93,12 +93,12 @@ function URLify(string){
 // test URLify on each input
 let urlTest = 'tauhida parveen';
 let urlTest2 = 'www.thinkful.com /tauh ida parv een';
-console.log(URLify(urlTest));
-console.log(URLify(urlTest2));
+// console.log(URLify(urlTest));
+// console.log(URLify(urlTest2));
 
 // put inputs into array and use arr.map(URLify)
 let arr = ['tauhida parveen', 'www.thinkful.com /tauh ida parv een'];
-console.log(arr.map(URLify));
+// console.log(arr.map(URLify));
 // result: [ 'tauhida%20parveen','www.thinkful.com%20/tauh%20ida%20parv%20een' ]
 
 
@@ -125,9 +125,9 @@ function removeLessThan(arr) {
   return newArr;
 }
 
-console.log(removeLessThan(testArray));
+// console.log(removeLessThan(testArray));
 // testArray -> [ 5, 6, 7, 8, 9, 10 ]
-console.log(removeLessThan(testArray2));
+// console.log(removeLessThan(testArray2));
 // testArray2 -> [ 10, 5, 7, 15 ]
 
 
@@ -151,16 +151,30 @@ function largeContinuousSum(arr) {
     sum += arr[i];
     if (sum > contSum) {
       contSum = sum;
-      console.log('contSum', contSum);
+      // console.log('contSum', contSum);
     }
   }
   return contSum;
 }
 
-console.log(largeContinuousSum(lcsArray)); // lcsArray = 12
-console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test case.
+// console.log(largeContinuousSum(lcsArray)); // lcsArray = 12
+// console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test case.
 
+let c = [-1, 4, 3, -1, -5, -3, 10, 11];
+function findMax(arr) {
+  let maxToHere = 0;
+  let maxSoFar = 0;
 
+  for (let i = 0; i < arr.length; i++) {
+    let item = arr[i];
+    maxToHere = Math.max(0, maxToHere + item);
+    maxSoFar = Math.max(maxSoFar, maxToHere);
+    console.log(`Item: ${item} ::-:: MaxToHere: ${maxToHere} ::-:: MaxSoFar: ${maxSoFar}`);
+  }
+  return maxSoFar;
+}
+
+console.log(findMax(c));
 
 
 /* - - - - - - - - - - - - - - - - -*/
@@ -172,9 +186,32 @@ console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test
 //    Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
 //    Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
 
+let mergeArray1 = [1, 3, 6, 8, 11];
+let mergeArray2 = [2, 3, 5, 8, 9, 10];
 
+function mergeArrays(arr1, arr2) {
+  let i = 0;
+  let j = 0;
+  let mergedArray = [];
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] <= arr2[j]) {
+      mergedArray.push(arr1[i++]);
+    } else {
+      mergedArray.push(arr2[j++]);
+    }
+  }
 
+  if (j < arr2.length) {
+    i = j;
+    arr1 = arr2;
+  }
+  while (i < arr1.length) {
+    mergedArray.push(arr1[i++]);
+  }
+  return mergedArray;
+}
 
+// console.log(mergeArrays(mergeArray1, mergeArray2));
 
 
 
