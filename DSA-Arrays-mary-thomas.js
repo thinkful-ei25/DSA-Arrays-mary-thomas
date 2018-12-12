@@ -69,7 +69,13 @@ function main() {
 // main();
 
 
-// URLify a string
+
+
+
+/* - - - - - - - - - - - - - - - - - - */
+/* - - - - - URLIFY A STRING - - - - - */
+/* - - - - - - - - - - - - - - - - - - */
+
 // A common mistake users make when they type in an URL is to put spaces between words 
 // or letters. One solution that developers can use to solve this problem is to replace 
 // any spaces with a '%20'. Write a method that takes in a string and replaces all its 
@@ -85,8 +91,10 @@ function URLify(string){
   return string.replace(/\s/g, '%20');
 }
 // test URLify on each input
-// console.log(URLify('tauhida parveen'));
-// console.log(URLify('www.thinkful.com /tauh ida parv een'));
+let urlTest = 'tauhida parveen';
+let urlTest2 = 'www.thinkful.com /tauh ida parv een';
+console.log(URLify(urlTest));
+console.log(URLify(urlTest2));
 
 // put inputs into array and use arr.map(URLify)
 let arr = ['tauhida parveen', 'www.thinkful.com /tauh ida parv een'];
@@ -94,17 +102,23 @@ console.log(arr.map(URLify));
 // result: [ 'tauhida%20parveen','www.thinkful.com%20/tauh%20ida%20parv%20een' ]
 
 
-// Filtering an array
+
+
+/* - - - - - - - - - - - - - - - - - - - -*/
+/* - - - - - FILTERING AN ARRAY - - - - - */
+/* - - - - - - - - - - - - - - - - - - - -*/
+
 // Imagine you have an array of numbers. Write an algorithm to remove all 
 // numbers less than five from the array. Don't use array's built-in .filter 
 // method here; write the algorithm from scratch.
 
 let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let testArray2 = [10, 2, 5, 7, 3, 0, 15];
 
 function removeLessThan(arr) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] > 5) {
+    if(arr[i] >= 5) {
       newArr.push(arr[i]);
     }
   }
@@ -112,4 +126,81 @@ function removeLessThan(arr) {
 }
 
 console.log(removeLessThan(testArray));
-// result -> [ 6, 7, 8, 9, 10 ]
+// testArray -> [ 5, 6, 7, 8, 9, 10 ]
+console.log(removeLessThan(testArray2));
+// testArray2 -> [ 10, 5, 7, 15 ]
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - -*/
+/* - - - - - MAX SUM IN THE ARRAY - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - -*/
+
+// You are given an array containing positive and negative integers. Write an 
+// algorithm which will find the largest sum in a continuous sequence.
+//    Input: [ 4, 6, -3, 5, -2, 1 ]
+//    Output: 12
+
+let lcsArray = [ 4, 6, -3, 5, -2, 1 ];
+let lcsArray2 = [-1, 4, 3, -1, -5, -3, 10, 11];
+function largeContinuousSum(arr) {
+  let sum = 0;
+  let contSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (sum > contSum) {
+      contSum = sum;
+      console.log('contSum', contSum);
+    }
+  }
+  return contSum;
+}
+
+console.log(largeContinuousSum(lcsArray)); // lcsArray = 12
+console.log(largeContinuousSum(lcsArray2)); // still need to solve for this test case.
+
+
+
+
+/* - - - - - - - - - - - - - - - - -*/
+/* - - - - - MERGE ARRAYS - - - - - */
+/* - - - - - - - - - - - - - - - - -*/
+
+// Imagine you have two arrays which have already been sorted. Write an algorithm to 
+// merge the two arrays into a single array, which should also be sorted.
+//    Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
+//    Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* - - - - - REMOVE CHARACTERS - - - - - */
+/* - - - - - - - - - - - - - - - - - - - */
+
+// Write an algorithm that deletes given characters from a string. For example, 
+// given a string of "Battle of the Vowels: Hawaii vs. Grozny" and characters to be 
+// removed are "aeiou", the algorithm should transform the original string to 
+// "Bttl f th Vwls: Hw vs. Grzny". Do not use Javascript's filter, split, or join methods.
+//    Input:'Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'
+//    Output: 'Bttl f th Vwls: Hw vs. Grzny'
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - -*/
+/* - - - - - PRODUCTS - - - - - */
+/* - - - - - - - - - - - - - - -*/
+
+// Given an array of numbers, write an algorithm to find out the products of every number,
+// except the one at that index.
+//    Input:[1, 3, 9, 4]
+//    Output:[108, 36, 12, 27]
