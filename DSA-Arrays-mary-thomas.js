@@ -1,16 +1,15 @@
-import memory from './memory';
+'use strict';
+const Array = require('./array');
 
-class Array {
-  constructor() {
-    this.length = 0;
-    this.ptr = memory.allocate(this.length);
-  }
-
-  push(value) {
-    this._resize(this.length + 1);
-    memory.set(this.ptr + this.length, value);
-    this.length++;
-  }
-
-  
+function main() {
+  Array.SIZE_RATIO = 3;
+  let arr = new Array();
+  arr.push(3);
+  console.log(arr);
 }
+
+main();
+
+// What is the length, capacity and memory address of your array?
+
+// Add the following in the main function before printing the array
