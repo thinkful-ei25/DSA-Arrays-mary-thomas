@@ -273,7 +273,22 @@ console.log(removeChar(removeChars, removeCharString));
 //    Input:[1, 3, 9, 4]
 //    Output:[108, 36, 12, 27]
 
+function products(array) {
+  let output = [];
+  for (let i = 0; i < array.length; i++) {
+    let product = 1;
+    for (let j = 0; j < array.length; j++) {
+      if (i !== j) {
+        product *= array[j];
+      }
+    }
+    output.push(product);
+  }
+  return output;
+}
 
+let productsArray = [1, 3, 9, 4];
+// console.log(products(productsArray));
 
 
 
@@ -320,4 +335,4 @@ function stringRotation(str1, str2) {
 // let str2 = 'azonma';
 let str1 = 'amazon';
 let str2 = 'azonam';
-console.log(stringRotation(str1, str2));
+// console.log(stringRotation(str1, str2));
