@@ -168,8 +168,8 @@ function largeContinuousSum(arr) {
   }
   return maxSoFar;
 }
-console.log(largeContinuousSum(lcsArray)); //  12
-console.log(largeContinuousSum(lcsArray2)); // 21
+// console.log(largeContinuousSum(lcsArray)); //  12
+// console.log(largeContinuousSum(lcsArray2)); // 21
 
 
 
@@ -223,7 +223,42 @@ function mergeArrays(arr1, arr2) {
 //    Input:'Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'
 //    Output: 'Bttl f th Vwls: Hw vs. Grzny'
 
+let removeCharString = 'Battle of the Vowels: Hawaii vs. Grozny';
+let removeChars = 'aeiou';
 
+// function removeChar(removeChars, str) {
+//   let remove = new RegExp('ReGeX' + removeChars + 'ReGeX', 'gi');
+//   return str.replace(remove, '');
+// }
+// console.log(removeChar(removeChars, removeCharString));
+
+function removeChar(removeChars, str) {
+  let newStr = '';
+  let count = 0;
+  console.log('removeChars length', removeChars.length);
+  console.log('str length', str.length);
+  // console.log('str char 0', str.charAt(0));
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < removeChars.length; j++) {
+      // console.log('i1', str.charAt(i));
+      // console.log('j1', removeChars.charAt(j));
+      if (str.charAt(i) === removeChars.charAt(j)) {
+        // console.log('str', str.charAt(i), 'remove', removeChars.charAt(j));
+        newStr += '';
+        // console.log('i', str.charAt(i));
+        // console.log('j', removeChars.charAt(j));
+        // newStr += str.charAt(i);
+      } else {
+        console.log(count);
+        newStr += str.charAt(i);
+        count = 0;
+      }
+    }
+  }
+  return newStr;
+}
+// removeChar(removeChars, removeCharString);
+console.log(removeChar(removeChars, removeCharString));
 
 
 
@@ -276,3 +311,13 @@ function mergeArrays(arr1, arr2) {
 //    Output: False
 //    Input: amazon, azonam
 //    Output: true
+
+function stringRotation(str1, str2) {
+  return (str2 + str2).indexOf(str1) !== -1;
+}
+
+// let str1 = 'amazon';
+// let str2 = 'azonma';
+let str1 = 'amazon';
+let str2 = 'azonam';
+console.log(stringRotation(str1, str2));
